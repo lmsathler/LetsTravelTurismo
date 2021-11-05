@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import api.UserDTO;
@@ -26,6 +28,13 @@ private final UserService userService;
 	
 	public UserController(UserService userService) {
 		this.userService = userService;
+	}
+	
+	@RequestMapping("/users")
+	@ResponseBody
+	public String getUsers() {
+		return "{\"users\":[{\"name\":\"Lucas\", \"country\":\"Brazil\"}," +
+		           "{\"name\":\"Jackie\",\"country\":\"China\"}]}";
 	}
 	
 	@GetMapping("/users/{id}")

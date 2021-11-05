@@ -4,6 +4,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.experimental.aot' version '0.10.5'
 	id 'org.graalvm.buildtools.native' version '0.9.4'
+	
 }
 
 group = 'LetsTravel'
@@ -14,7 +15,6 @@ configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
-}
 
 repositories {
 	maven { url 'https://repo.spring.io/release' }
@@ -28,6 +28,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+	
 }
 
 test {
